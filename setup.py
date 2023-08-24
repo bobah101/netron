@@ -17,8 +17,8 @@ setuptools.setup(
         'visualizer', 'viewer'
     ],
     license="MIT",
-    package_dir={ 'netron': 'netron' },
-    packages=[ 'netron' ],
+    package_dir={ 'netron': 'source' },
+    packages=[ 'source' ],
     package_data={ 'netron': [ '*.*' ] },
     exclude_package_data={ 'netron': [ 'app.js', 'electron.*' ] },
     install_requires=[],
