@@ -18,7 +18,7 @@ setuptools.setup(
     ],
     license="MIT",
     package_dir={ 'netron': 'source' },
-    packages=[ 'source' ],
+    packages=[ 'netron' ],
     package_data={ 'netron': [ '*.*' ] },
     exclude_package_data={ 'netron': [ 'app.js', 'electron.*' ] },
     install_requires=[],
