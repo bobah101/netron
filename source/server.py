@@ -34,10 +34,13 @@ class _ContentProvider: # pylint: disable=too-few-public-methods
             return self.data
         base_dir = os.path.realpath(self.dir)
         filename = os.path.normpath(os.path.realpath(base_dir + '/' + path))
-        if os.path.commonprefix([ base_dir, filename ]) == base_dir:
-            if os.path.exists(filename) and not os.path.isdir(filename):
-                with open(filename, 'rb') as file:
-                    return file.read()
+
+        #if os.path.commonprefix([ base_dir, filename ]) == base_dir:
+
+        # hack for support symlinks
+        if os.path.exists(filename) and not os.path.isdir(filename):
+            with open(filename, 'rb') as file:
+                return file.read()
         return None
 
 class _HTTPRequestHandler(http.server.BaseHTTPRequestHandler):
